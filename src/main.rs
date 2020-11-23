@@ -10,7 +10,7 @@ use selenium_webdriver::*;
 
 ///
 /// Coded by L14ms1 <l14ms1@outlook.fr>
-/// last update 19:58 - 23/11/2020
+/// last update 23:01 - 23/11/2020
 /// LICENSE MIT
 ///
 
@@ -26,7 +26,7 @@ fn main() {
 ..:::::..:::......::::......:::........:::..:::::..::........::..:::::..::..::::..:: \n");
     println!("-------------------------------------------------------------------------------------");
     println!("Coded by L14ms1");
-    println!("version : 0.1.3b");
+    println!("version : 0.1.4b");
     println!("Small disclaimer, you must use this project on your sites not on other people's sites, it only protects your site.");
     println!("-------------------------------------------------------------------------------------");
 
