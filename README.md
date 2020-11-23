@@ -11,7 +11,7 @@ You need to install [chromedriver](https://chromedriver.chromium.org) and when y
 How to put chromedriver in the path :
 
 ```
-Control Panel > System and Security > System > Advanced System Settings > Environment Variable > System Variable > New > Path > /path/chromedriver.exe
+Control Panel > System and Security > System > Advanced System Settings > Environment Variable > System Variable > New > Path > C:/path/
 ```
 
 And to check if it is well installed, run the command prompt (cmd) and write : 
