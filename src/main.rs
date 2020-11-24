@@ -152,4 +152,3 @@ fn pause() {
     io::stdout().flush().unwrap();
     let _ = io::stdin().read(&mut [0u8]).unwrap();
 }
-

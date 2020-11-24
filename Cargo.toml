@@ -7,7 +7,6 @@ documentation = "https://github.com/L14ms111/assbreak"
 homepage = "https://github.com/L14ms111/assbreak"
 repository = "https://github.com/L14ms111/assbreak"
 license = "MIT"
-license-file = "LICENSE"
 keywords = ["brute-force", "l14ms1"]
 edition = "2018"
 
