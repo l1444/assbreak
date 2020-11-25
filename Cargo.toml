@@ -1,0 +1,17 @@
+[package]
+name = "assbreak"
+version = "0.1.4"
+authors = ["L14ms1 <l14ms1@outlook.fr>"]
+description = "a tool that helps brute-force a website."
+documentation = "https://github.com/L14ms111/assbreak"
+homepage = "https://github.com/L14ms111/assbreak"
+repository = "https://github.com/L14ms111/assbreak"
+license = "MIT"
+keywords = ["brute-force", "l14ms1"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+reqwest = "0.10.8"
+selenium_webdriver = "0.1.7"
