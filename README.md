@@ -1,7 +1,6 @@
 # ASSBREAK
 
-<<<<<<< HEAD
-![demoent](https://github.com/L14ms111/img_project/blob/main/demo.gif?raw=true)
+![demoent](https://raw.githubusercontent.com/L14ms111/img_project/main/demo.gif)
 
 A tool that helps brute-force a website.
 
@@ -11,15 +10,11 @@ The youtube video is available on this [link](https://youtu.be/0ZIxBSaNOJQ).
 
 
 ## How to install
-=======
-![demoent](https://raw.githubusercontent.com/L14ms111/img_project/main/demo.gif)
 
 A tool that helps brute-force a website.
 
 **ANY FRAUDULENT USE IS NOT THE FAULT OF THE ONE WHO PROGRAMS IT, BUT OF THE ONE WHO USES IT FOR ILLEGAL PURPOSES.**
 
-## How to installazery12334
->>>>>>> 6d68cc2... add warning
 
 ### Prerequisites
 You need to install [chromedriver](https://chromedriver.chromium.org) and when you have it installed, you must put it in the environment variables.
@@ -68,13 +63,9 @@ java -jar selenium.jar
 And if all goes well, normally you will get this message :
 ```
 15:21:14.131 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.59, revision: e82be7d358
-
 15:21:14.284 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
-
 2020-11-23 15:21:14.383:INFO::main: Logging initialized @785ms to org.seleniumhq.jetty9.util.log.StdErrLog
-
 15:21:14.989 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
-
 15:21:15.781 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
 ```
 
@@ -98,14 +89,11 @@ You will need some basic CSS, and element inspection on your browser, for exampl
 [~] Enter the username to brute-force : L14ms1
 [~] Enter the path of the password dictionary : C:/Users/L14ms1/Desktop/passlist.txt
 [~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? no
-You will not see chrome however you will be able to see the logs.
+[!] You will not see chrome however you will be able to see the logs.
 ```
 
 ## How do I get a password dictionary ?
 
 I will put a small password dictionary of about 111kb on the download link BUT you can download a big 14.5gb one on se [link](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) (torrent).
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6d68cc2... add warning
