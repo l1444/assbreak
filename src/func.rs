@@ -40,8 +40,6 @@ pub fn pause() {
 
 pub fn no_enter(str: String) -> String {
     return str.replace("\r", "").replace("\n", "")
-<<<<<<< HEAD
-=======
 }
 
 pub fn verify_prerequisites() -> bool {
@@ -52,5 +50,4 @@ pub fn verify_prerequisites() -> bool {
     } else {
         false
     }
->>>>>>> 6d68cc2... add warning
 }
