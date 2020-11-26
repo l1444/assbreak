@@ -40,4 +40,17 @@ pub fn pause() {
 
 pub fn no_enter(str: String) -> String {
     return str.replace("\r", "").replace("\n", "")
+<<<<<<< HEAD
+=======
+}
+
+pub fn verify_prerequisites() -> bool {
+    let chromedriver = String::from("C:/webdrivers/chromedriver.exe");
+    let selenium = String::from("C:/webdrivers/selenium.jar");
+    if Path::new(chromedriver.trim()).exists() && Path::new(selenium.trim()).exists(){
+        true
+    } else {
+        false
+    }
+>>>>>>> 6d68cc2... add warning
 }

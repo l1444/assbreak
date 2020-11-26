@@ -50,7 +50,11 @@ fn main() {
             }
         }
         Err(e) => {
+<<<<<<< HEAD
             println!("une erreur s'est produite : {}", e);
+=======
+            println!("An error has occurred : {}", e);
+>>>>>>> 6d68cc2... add warning
         }
     }
     pause();
