@@ -88,6 +88,6 @@ You will need some basic CSS, and element inspection on your browser, for exampl
 
 ## How do I get a password dictionary ?
 
-I will put a small password dictionary of about 111kb on the download link BUT you can download a big 14.5gb one on se [link](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) (torrent).
+I will put a small password dictionary of about 111kb on the download link BUT you can download a big 14.5gb one on this [link](https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm) (torrent).
 
 
