@@ -1,7 +1,13 @@
+// std
 use std::fs::File;
 use std::io;
 use std::io::{BufRead, Read, Write};
 use std::path::Path;
+
+//extern
+use ureq::*;
+use url::Url;
+
 
 pub fn read_input() -> String {
     loop {
@@ -10,7 +16,7 @@ pub fn read_input() -> String {
         match io::stdin().read_line(&mut v) {
             Ok(_) => {
                 if !String::from(&v).is_empty() {
-                    break no_enter(v);
+                    break filter(v);
                 } else {
                     continue;
                 }
@@ -38,7 +44,7 @@ pub fn pause() {
     let _ = io::stdin().read(&mut [0u8]).unwrap();
 }
 
-pub fn no_enter(str: String) -> String {
+pub fn filter(str: String) -> String {
     return str.replace("\r", "").replace("\n", "")
 }
 
@@ -50,4 +56,16 @@ pub fn verify_prerequisites() -> bool {
     } else {
         false
     }
+}
+
+pub fn verify_update(v: String, addr: String) -> bool {
+    if String::from(download_string(addr)) == v {
+        false
+    } else {
+        true
+    }
+}
+
+pub fn download_string(addr: String) -> String {
+    filter(ureq::get(&*addr).call().into_string().unwrap())
 }

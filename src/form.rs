@@ -1,7 +1,8 @@
 //local
 use super::func::*;
 use super::config::*;
-use super::brute::brute_force;
+use super::brute::*;
+
 
 pub fn input_text_password_submit() {
     // website for bruteforce
@@ -29,7 +30,6 @@ pub fn input_text_password_submit() {
 
     default_config(website, username, path_file, bool_chrome);
 }
-
 pub fn input_email_password_submit() {
     // website for bruteforce
     print!("[~] The site you want to try brute-force : ");
@@ -108,7 +108,6 @@ pub fn input_email_password_button() {
 
     config_field_email_button(website, username, path_file, bool_chrome);
 }
-
 pub fn default() {
     // website for bruteforce
     print!("[~] The site you want to try brute-force : ");
@@ -146,4 +145,47 @@ pub fn default() {
     }
 
     brute_force(website, username_input, password_input, form_button, username, path_file, bool_chrome);
+}
+pub fn brute_email() {
+    print!("[~] Enter the imap address of the service with which you want to brute-force : ");
+    let imap = read_input();
+
+    print!("[~] Enter a brute-force email address : ");
+    let username = read_input();
+
+    // dictionary_password
+    print!("[~] Enter the path of the password dictionary : ");
+    let path_file = read_input();
+
+    brute_force_email(username, path_file, imap);
+}
+pub fn brute_email_outlook() {
+    print!("[~] Enter the outlook address to brute-force : ");
+    let username = read_input();
+
+    // dictionary_password
+    print!("[~] Enter the path of the password dictionary : ");
+    let path_file = read_input();
+
+    brute_force_email(username, path_file, String::from("imap-mail.outlook.com"));
+}
+pub fn brute_email_icloud() {
+    print!("[~] Enter the brute-force icloud address : ");
+    let username = read_input();
+
+    // dictionary_password
+    print!("[~] Enter the path of the password dictionary : ");
+    let path_file = read_input();
+
+    brute_force_email(username, path_file, String::from("imap.mail.me.com"));
+}
+pub fn brute_email_yahoo() {
+    print!("[~] Enter the brute-force yahoo address : ");
+    let username = read_input();
+
+    // dictionary_password
+    print!("[~] Enter the path of the password dictionary : ");
+    let path_file = read_input();
+
+    brute_force_email(username, path_file, String::from("imap.mail.yahoo.com"));
 }

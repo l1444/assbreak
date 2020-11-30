@@ -1,20 +1,14 @@
 # ASSBREAK
+*For educational purposes only :)*
 
 ![demoent](https://raw.githubusercontent.com/L14ms111/img_project/main/demo.gif)
 
 A tool that helps brute-force a website.
 
-The youtube video is available on this [link](https://youtu.be/0ZIxBSaNOJQ).
-
-**ANY FRAUDULENT USE IS NOT THE FAULT OF THE ONE WHO PROGRAMS IT, BUT OF THE ONE WHO USES IT FOR ILLEGAL PURPOSES.**
+The youtube video is available on this (**0.1.4b**) [link](https://youtu.be/0ZIxBSaNOJQ).
 
 
 ## How to install
-
-A tool that helps brute-force a website.
-
-**ANY FRAUDULENT USE IS NOT THE FAULT OF THE ONE WHO PROGRAMS IT, BUT OF THE ONE WHO USES IT FOR ILLEGAL PURPOSES.**
-
 
 ### Prerequisites
 You need to install [chromedriver](https://chromedriver.chromium.org) and when you have it installed, you must put it in the environment variables.
