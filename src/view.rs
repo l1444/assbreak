@@ -31,6 +31,6 @@ pub fn header() {
     // only ssl certificate valid :)
     if verify_update(String::from("0.1.8b"), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION")) == true {
         let version: String = download_string(String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION"));
-        println!("[!] [WARNING] A new version is available : {}, the software update is available on this link : https://github.com/L14ms111/assbreak/releases", filter(version));
+        println!("[!] [WARNING] A new version is available : {:?}, the software update is available on this link : https://github.com/L14ms111/assbreak/releases", filter(version).replace(" ", ""));
     }
 }

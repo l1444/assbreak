@@ -6,7 +6,6 @@ use std::path::Path;
 
 //extern
 use ureq::*;
-use url::Url;
 
 
 pub fn read_input() -> String {
@@ -67,5 +66,5 @@ pub fn verify_update(v: String, addr: String) -> bool {
 }
 
 pub fn download_string(addr: String) -> String {
-    filter(ureq::get(&*addr).call().into_string().unwrap())
+    filter(ureq::get(&*addr).call().into_string().unwrap()).replace(" ", "")
 }
