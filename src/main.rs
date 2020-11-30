@@ -17,10 +17,11 @@ mod form;
 
 ///
 /// Coded by L14ms1 <l14ms1@outlook.fr>
-/// last update 23:01 - 25/11/2020
+/// last update 23:01 - 28/11/2020
 /// LICENSE MIT
 ///
 ///
+
 
 fn main() {
     header();
@@ -30,7 +31,7 @@ fn main() {
     // dispatcher
     match io::stdin().read_line(&mut commands) {
         Ok(_) => {
-            match String::as_str(&no_enter(commands)) {
+            match String::as_str(&filter(commands)) {
                 "1" => {
                     form::input_text_password_submit();
                 }
@@ -45,6 +46,18 @@ fn main() {
                 }
                 "5" => {
                     form::default();
+                }
+                "6" => {
+                    form::brute_email_outlook();
+                }
+                "7" => {
+                    form::brute_email_icloud();
+                }
+                "8" => {
+                    form::brute_email_yahoo();
+                }
+                "9" => {
+                    form::brute_email();
                 }
                 _ => {}
             }
