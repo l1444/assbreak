@@ -1,6 +1,6 @@
 [package]
 name = "assbreak"
-version = "0.1.8"
+version = "0.1.9"
 authors = ["L14ms1 <l14ms1@outlook.fr>"]
 description = "a tool that helps brute-force a website."
 documentation = "https://github.com/L14ms111/assbreak"

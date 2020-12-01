@@ -1,12 +1,11 @@
+use std::{io};
 // std
 use std::fs::File;
-use std::io;
 use std::io::{BufRead, Read, Write};
 use std::path::Path;
 
 //extern
-use ureq::*;
-
+use ureq::get;
 
 pub fn read_input() -> String {
     loop {
@@ -44,18 +43,20 @@ pub fn pause() {
 }
 
 pub fn filter(str: String) -> String {
-    return str.replace("\r", "").replace("\n", "")
+    return str.replace("\r", "").replace("\n", "");
 }
+
 
 pub fn verify_prerequisites() -> bool {
     let chromedriver = String::from("C:/webdrivers/chromedriver.exe");
     let selenium = String::from("C:/webdrivers/selenium.jar");
-    if Path::new(chromedriver.trim()).exists() && Path::new(selenium.trim()).exists(){
+    if Path::new(chromedriver.trim()).exists() && Path::new(selenium.trim()).exists() {
         true
     } else {
         false
     }
 }
+
 
 pub fn verify_update(v: String, addr: String) -> bool {
     if String::from(download_string(addr)) == v {
