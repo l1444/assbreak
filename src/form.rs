@@ -17,6 +17,10 @@ pub fn input_text_password_submit() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -28,7 +32,7 @@ pub fn input_text_password_submit() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    default_config(website, username, path_file, bool_chrome);
+    default_config(website, username, path_file, key, bool_chrome);
 }
 
 
@@ -46,6 +50,10 @@ pub fn input_email_password_submit() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -57,7 +65,7 @@ pub fn input_email_password_submit() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    config_field_email(website, username, path_file, bool_chrome);
+    config_field_email(website, username, path_file, key, bool_chrome);
 }
 pub fn input_text_password_button() {
     // website for bruteforce
@@ -72,6 +80,10 @@ pub fn input_text_password_button() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -83,7 +95,7 @@ pub fn input_text_password_button() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    config_field_button(website, username, path_file, bool_chrome);
+    config_field_button(website, username, path_file, key,bool_chrome);
 }
 pub fn input_email_password_button() {
     // website for bruteforce
@@ -98,6 +110,10 @@ pub fn input_email_password_button() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -109,7 +125,7 @@ pub fn input_email_password_button() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    config_field_email_button(website, username, path_file, bool_chrome);
+    config_field_email_button(website, username, path_file, key, bool_chrome);
 }
 pub fn input_button() {
     // website for bruteforce
@@ -128,6 +144,10 @@ pub fn input_button() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -139,7 +159,7 @@ pub fn input_button() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    config_button(website, username, path_file ,btn, bool_chrome);
+    config_button(website, username, path_file ,btn, key, bool_chrome);
 }
 pub fn input_email_button() {
     // website for bruteforce
@@ -158,6 +178,10 @@ pub fn input_email_button() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -169,7 +193,7 @@ pub fn input_email_button() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    config_email_button(website, username, path_file ,btn, bool_chrome);
+    config_email_button(website, username, path_file ,btn, key, bool_chrome);
 }
 pub fn default() {
     // website for bruteforce
@@ -196,6 +220,10 @@ pub fn default() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
     let chrome = read_input();
     let mut bool_chrome: bool;
@@ -207,7 +235,7 @@ pub fn default() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    brute_force(website, username_input, password_input, form_button, username, path_file, bool_chrome);
+    brute_force(website, username_input, password_input, form_button, username, path_file, key, bool_chrome);
 }
 
 //email
@@ -222,7 +250,11 @@ pub fn brute_email() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
-    brute_force_email(username, path_file, imap);
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
+    brute_force_email(username, path_file, key,imap);
 }
 pub fn brute_email_outlook() {
     print!("[~] Enter the outlook address to brute-force : ");
@@ -232,7 +264,11 @@ pub fn brute_email_outlook() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
-    brute_force_email(username, path_file, String::from("imap-mail.outlook.com"));
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
+    brute_force_email(username, path_file, key,String::from("imap-mail.outlook.com"));
 }
 pub fn brute_email_icloud() {
     print!("[~] Enter the brute-force icloud address : ");
@@ -242,7 +278,11 @@ pub fn brute_email_icloud() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
-    brute_force_email(username, path_file, String::from("imap.mail.me.com"));
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
+    brute_force_email(username, path_file, key,String::from("imap.mail.me.com"));
 }
 pub fn brute_email_yahoo() {
     print!("[~] Enter the brute-force yahoo address : ");
@@ -252,6 +292,22 @@ pub fn brute_email_yahoo() {
     print!("[~] Enter the path of the password dictionary : ");
     let path_file = read_input();
 
-    brute_force_email(username, path_file, String::from("imap.mail.yahoo.com"));
+    // keyword
+    print!("[~] A word to filter passwords : (optional)");
+    let key = read_input();
+
+    brute_force_email(username, path_file, key, String::from("imap.mail.yahoo.com"));
 }
 
+pub fn query() {
+
+    // keyword
+    print!("[~] Enter the passwords corresponding to a keyword : ");
+    let key = read_input();
+
+    // dictionary_password
+    print!("[~] Enter the path of the password dictionary : ");
+    let path_file = read_input();
+
+    search_by_keyword(key, path_file);
+}

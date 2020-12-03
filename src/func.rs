@@ -1,8 +1,9 @@
-use std::{io};
 // std
 use std::fs::File;
+use std::io;
 use std::io::{BufRead, Read, Write};
 use std::path::Path;
+use std::process::exit;
 
 //extern
 use ureq::get;
@@ -69,3 +70,25 @@ pub fn verify_update(v: String, addr: String) -> bool {
 pub fn download_string(addr: String) -> String {
     filter(ureq::get(&*addr).call().into_string().unwrap()).replace(" ", "")
 }
+
+pub fn search_by_keyword(keys: String, dictionary: String) {
+    if Path::new(dictionary.trim()).exists() {
+        let mut list_word = vec![String::from("")];
+        if let Ok(lines) = read_lines(dictionary.trim()) {
+            let mut attempt = 0;
+            for line in lines {
+                if let Ok(l) = line {
+                    while l.contains(&keys) && l != list_word[attempt] {
+                        list_word.push(l.clone());
+                        println!("{}", list_word[attempt]);
+                        attempt += 1;
+                    }
+                }
+            }
+        }
+    } else {
+        pause();
+        exit(0);
+    }
+}
+
