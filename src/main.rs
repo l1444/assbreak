@@ -3,10 +3,9 @@ use func::*;
 use view::header;
 
 //std
-use std::io;
+use std::{io, env};
 use std::io::Write;
 use std::process::exit;
-
 
 // mod
 mod brute;
@@ -15,15 +14,27 @@ mod config;
 mod view;
 mod form;
 
+// extern
+use discord_rpc_client::Client;
+
 ///
 /// Coded by L14ms1 <l14ms1@outlook.fr>
-/// last update 09:15 - 03/12/2020
+/// last update 22:54 - 08/12/2020
 /// LICENSE MIT
 ///
 ///
 
 fn main() {
     header();
+    let mut discord = Client::new(785977885696458793).unwrap();
+    discord.start();
+    discord.set_activity(|a| a
+        .state("a tool for brute-force website mail address.")
+        .assets(|ass| ass
+            .large_image("icon")
+            .large_text("assbreak")
+            .small_image("pikaprison")
+            .small_text("Coded by L14ms1")));
     print!("[~] What configuration do you want to use ? : ");
     let mut commands = String::new();
     let _ = io::stdout().flush();
@@ -94,4 +105,6 @@ je suis devenu son esclave sexuel, mais j'aime ça. Faudrait que je demande a ma
     pause();
     exit(0);
 }
+
+
 

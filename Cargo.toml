@@ -17,12 +17,12 @@ OriginalFilename = "assbreak.exe"
 ProductVersion = "0.1.11b"
 FileDescription = ""
 
-
 [dependencies]
 ureq = "1.5.2"
 selenium_webdriver = "0.1.7"
 imap = "2.3.0"
 native-tls = "0.2.6"
+discord-rpc-client = "^0.2"
 
 [target.'cfg(windows)'.build-dependencies]
 winres = "0.1"
