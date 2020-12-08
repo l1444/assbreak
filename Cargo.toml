@@ -1,6 +1,6 @@
 [package]
 name = "assbreak"
-version = "0.1.10"
+version = "0.1.11"
 authors = ["L14ms1 <l14ms1@outlook.fr>"]
 description = "a tool that helps brute-force a website and address mail."
 documentation = "https://github.com/L14ms111/assbreak"
@@ -9,11 +9,20 @@ repository = "https://github.com/L14ms111/assbreak"
 license = "MIT"
 keywords = ["brute-force", "l14ms1"]
 edition = "2018"
+build = "build.rs"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[package.metadata.winres]
+ProductName = "assbreak"
+OriginalFilename = "assbreak.exe"
+ProductVersion = "0.1.11b"
+FileDescription = ""
 
 [dependencies]
 ureq = "1.5.2"
 selenium_webdriver = "0.1.7"
 imap = "2.3.0"
 native-tls = "0.2.6"
+discord-rpc-client = "^0.2"
+
+[target.'cfg(windows)'.build-dependencies]
+winres = "0.1"

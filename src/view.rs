@@ -12,7 +12,7 @@ pub fn header() {
 ..:::::..:::......::::......:::........:::..:::::..::........::..:::::..::..::::..::\n");
     println!("---------------------------------------------------------------------------------------------------------");
     println!("  Coded by L14ms1 for pa$$ion");
-    println!("  version : 0.1.10b");
+    println!("  version : 0.1.11b");
     println!("  For educational purposes only !");
     println!("---------------------------------------------------------------------------------------------------------");
     println!(" Brute-force a password from a website form : [EXPERIMENTAL]");
@@ -29,8 +29,7 @@ pub fn header() {
     if verify_prerequisites() == false {
         println!("[!] [WARNING] Please put selenium.jar and chromedriver.exe in C:/webdrivers/");
     }
-    // only ssl certificate valid :)
-    if verify_update(String::from("0.1.10b"), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION")) == true {
+    if verify_update(String::from("0.1.11b"), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION")) == true {
         let version: String = download_string(String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION"));
         println!("[!] [WARNING] A new version is available : {:?}, the software update is available on this link : https://github.com/L14ms111/assbreak/releases", filter(version).replace(" ", ""));
     }
