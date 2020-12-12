@@ -1,6 +1,6 @@
 [package]
 name = "assbreak"
-version = "0.1.11"
+version = "0.1.12"
 authors = ["L14ms1 <l14ms1@outlook.fr>"]
 description = "a tool that helps brute-force a website and address mail."
 documentation = "https://github.com/L14ms111/assbreak"
@@ -14,8 +14,8 @@ build = "build.rs"
 [package.metadata.winres]
 ProductName = "assbreak"
 OriginalFilename = "assbreak.exe"
-ProductVersion = "0.1.11b"
-FileDescription = ""
+ProductVersion = "0.1.12b"
+FileDescription = "a tool that helps brute-force a website and address mail."
 
 [dependencies]
 ureq = "1.5.2"
