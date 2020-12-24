@@ -1,8 +1,8 @@
 //local
 use super::func::*;
 use super::config::*;
-use super::brute::*;
-
+use crate::brute_force::email::brute_mail;
+use crate::brute_force::website::brute_website;
 
 pub fn input_text_password_submit() {
     // website for bruteforce
@@ -18,7 +18,7 @@ pub fn input_text_password_submit() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -51,7 +51,7 @@ pub fn input_email_password_submit() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -81,7 +81,7 @@ pub fn input_text_password_button() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -111,7 +111,7 @@ pub fn input_email_password_button() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -145,7 +145,7 @@ pub fn input_button() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -179,7 +179,7 @@ pub fn input_email_button() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -221,7 +221,7 @@ pub fn default() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
     print!("[~] Do you want to see chrome in the middle of a brute force operation (yes or no) ? ");
@@ -235,7 +235,7 @@ pub fn default() {
         println!("[!] You will not see chrome however you will be able to see the logs.");
     }
 
-    brute_force(website, username_input, password_input, form_button, username, path_file, key, bool_chrome);
+    brute_website(website, username_input, password_input, form_button, username, path_file, key, bool_chrome);
 }
 
 //email
@@ -251,10 +251,10 @@ pub fn brute_email() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
-    brute_force_email(username, path_file, key,imap);
+    brute_mail(username, path_file, key,imap);
 }
 pub fn brute_email_outlook() {
     print!("[~] Enter the outlook address to brute-force : ");
@@ -265,10 +265,10 @@ pub fn brute_email_outlook() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
-    brute_force_email(username, path_file, key,String::from("imap-mail.outlook.com"));
+    brute_mail(username, path_file, key,String::from("imap-mail.outlook.com"));
 }
 pub fn brute_email_icloud() {
     print!("[~] Enter the brute-force icloud address : ");
@@ -279,10 +279,10 @@ pub fn brute_email_icloud() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
-    brute_force_email(username, path_file, key,String::from("imap.mail.me.com"));
+    brute_mail(username, path_file, key,String::from("imap.mail.me.com"));
 }
 pub fn brute_email_yahoo() {
     print!("[~] Enter the brute-force yahoo address : ");
@@ -293,10 +293,10 @@ pub fn brute_email_yahoo() {
     let path_file = read_input();
 
     // keyword
-    print!("[~] A word to filter passwords : (optional)");
+    print!("[~] A word to filter passwords (optional): ");
     let key = read_input();
 
-    brute_force_email(username, path_file, key, String::from("imap.mail.yahoo.com"));
+    brute_mail(username, path_file, key, String::from("imap.mail.yahoo.com"));
 }
 
 pub fn query() {

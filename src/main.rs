@@ -3,19 +3,18 @@ use func::*;
 use view::header;
 
 //std
-use std::{io, env};
+use std::io;
 use std::io::Write;
 use std::process::exit;
 
 // mod
-mod brute;
-mod func;
+mod brute_force;
 mod config;
-mod view;
 mod form;
+mod func;
+mod view;
 
-// extern
-use discord_rpc_client::Client;
+
 
 ///
 /// Coded by L14ms1 <l14ms1@outlook.fr>
@@ -26,15 +25,7 @@ use discord_rpc_client::Client;
 
 fn main() {
     header();
-    let mut discord = Client::new(785977885696458793).unwrap();
-    discord.start();
-    discord.set_activity(|a| a
-        .state("a tool for brute-force website mail address.")
-        .assets(|ass| ass
-            .large_image("icon")
-            .large_text("assbreak")
-            .small_image("pikaprison")
-            .small_text("Coded by L14ms1")));
+    rpc();
     print!("[~] What configuration do you want to use ? : ");
     let mut commands = String::new();
     let _ = io::stdout().flush();
@@ -42,38 +33,41 @@ fn main() {
     match io::stdin().read_line(&mut commands) {
         Ok(_) => {
             match String::as_str(&filter(commands)) {
-                "$1" => {
+                "1" => {
                     form::input_text_password_submit();
                 }
-                "$2" => {
+                "2" => {
                     form::input_email_password_submit();
                 }
-                "$3" => {
+                "3" => {
                     form::input_text_password_button();
                 }
-                "$4" => {
+                "4" => {
                     form::input_email_password_button();
                 }
-                "$5" => {
+                "5" => {
                     form::input_button();
                 }
-                "$6" => {
+                "6" => {
                     form::input_email_button();
                 }
-                "$7" => {
+                "7" => {
                     form::default();
                 }
-                "$8" => {
+                "8" => {
                     form::brute_email_outlook();
                 }
-                "$9" => {
+                "9" => {
                     form::brute_email_icloud();
                 }
-                "$10" => {
+                "10" => {
                     form::brute_email_yahoo();
                 }
-                "$11" => {
+                "11" => {
                     form::brute_email();
+                }
+                "$quit" => {
+                    exit(0);
                 }
                 "$query" => {
                     form::query();
