@@ -1,0 +1,21 @@
+name: assbreak
+version: '0.1.13b'
+summary: a tool that helps brute-force a website and address mail.
+description: |
+  assbreak is a tool that helps brute-force a website and address mail.
+
+confinement: devmode
+base: core18
+
+parts:
+  assbreak:
+    plugin: rust
+    source: https://github.com/L14ms111/assbreak.git
+    override-build: |
+            [ -f "$SNAPCRAFT_PART_INSTALL/bin/assbreak" ] && rm "$SNAPCRAFT_PART_INSTALL/bin/assbreak"
+            snapcraftctl build
+    
+
+apps:
+  assbreak:
+    command: bin/assbreak

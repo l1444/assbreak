@@ -7,6 +7,8 @@ use std::process::exit;
 
 //extern
 use ureq::get;
+use discord_rpc_client::Client;
+
 
 pub fn read_input() -> String {
     loop {
@@ -90,5 +92,44 @@ pub fn search_by_keyword(keys: String, dictionary: String) {
         pause();
         exit(0);
     }
+}
+
+#[cfg(target_os = "windows")]
+pub fn rpc() {
+    let mut discord = Client::new(791452694388670465).unwrap();
+    discord.start();
+    discord.set_activity(|a| a
+        .state("a tool for brute-force website mail address.")
+        .assets(|ass| ass
+            .large_image("assbreak")
+            .large_text("assbreak")
+            .small_image("windows")
+            .small_text("assbreak for windows")));
+}
+
+#[cfg(target_os = "macos")]
+pub fn rpc() {
+    let mut discord = Client::new(791452694388670465).unwrap();
+    discord.start();
+    discord.set_activity(|a| a
+        .state("a tool for brute-force website mail address.")
+        .assets(|ass| ass
+            .large_image("assbreak")
+            .large_text("assbreak")
+            .small_image("macos")
+            .small_text("assbreak for MacOs")));
+}
+
+#[cfg(target_os = "linux")]
+pub fn rpc() {
+    let mut discord = Client::new(791452694388670465).unwrap();
+    discord.start();
+    discord.set_activity(|a| a
+        .state("a tool for brute-force website mail address.")
+        .assets(|ass| ass
+            .large_image("assbreak")
+            .large_text("assbreak")
+            .small_image("linux")
+            .small_text("assbreak for linux")));
 }
 
