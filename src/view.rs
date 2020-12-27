@@ -27,9 +27,9 @@ pub fn header() {
     if verify_update(version_app.clone(), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION")) == true {
         let version: String = download_string(String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION"));
         #[cfg(windows)]
-        println!("[!] [WARNING] A new version is available : {}, the software update is available on this link : https://github.com/L14ms111/assbreak/releases" filter(version).replace(" ", ""));
+        println!("{}{}{}", "[!] [WARNING] A new version is available : ".bright_yellow() ,filter(version).replace(" ", "").bright_yellow().to_string(), ", the software update is available on this link : https://github.com/L14ms111/assbreak/releases".bright_yellow());
         #[cfg(target_os = "macos")]
-        println!("[!] [WARNING] A new version is available : {}, You must type this 'git pull' command to update the tool.", filter(version.clone()).replace(" ", ""));
+        println!("{} {}{}", "[!] [WARNING] A new version is available :".bright_yellow() ,filter(version.clone()).replace(" ", "").bright_yellow().to_string(), ", You must type this 'git pull' command to update the tool.".bright_yellow());
         #[cfg(target_os = "linux")]
         println!("{} {}{}", "[!] [WARNING] A new version is available :".bright_yellow() ,filter(version.clone()).replace(" ", "").bright_yellow().to_string(), ", You must type this 'git pull' command to update the tool.".bright_yellow());
     }
