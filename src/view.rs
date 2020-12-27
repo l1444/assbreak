@@ -5,7 +5,7 @@ use super::func::*;
 use colored::*;
 
 pub fn header() {
-    let version_app:String = String::from("0.1.14b").bright_green().to_string();
+    let version_app:String = String::from("0.1.14b");
     print!("\n{}\n", ":::'###:::::'######:::'######::'########::'########::'########::::'###::::'##:::'##:
 ::'## ##:::'##... ##:'##... ##: ##.... ##: ##.... ##: ##.....::::'## ##::: ##::'##::
 :'##:. ##:: ##:::..:: ##:::..:: ##:::: ##: ##:::: ##: ##::::::::'##:. ##:: ##:'##:::
@@ -16,7 +16,7 @@ pub fn header() {
 ..:::::..:::......::::......:::........:::..:::::..::........::..:::::..::..::::..::".bright_green());
     println!("{}", "---------------------------------------------------------------------------------------------------------".bright_green());
     println!("  {}", "Coded by L14ms1 for pa$$ion".bright_green());
-    println!("  {} {}", "version :".bright_green(), version_app);
+    println!("  {} {}", "version :".bright_green(), version_app.bright_green().to_string());
     println!("  {}", "For educational purposes only !".bright_green());
     println!("{}", "---------------------------------------------------------------------------------------------------------".bright_green());
     #[cfg(windows)]
