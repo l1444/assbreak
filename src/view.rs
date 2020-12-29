@@ -21,8 +21,8 @@ pub fn header() {
         println!("{}", "[!] [WARNING] Please put selenium.jar and chromedriver.exe in C:/webdrivers/");
     }
 
-    if verify_update(version_app.clone(), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION")) == true {
-        let version: String = download_string(String::from("https://raw.githubusercontent.com/L14ms111/assbreak/main/VERSION"));
+    if verify_update(version_app.clone(), String::from("https://raw.githubusercontent.com/L14ms111/assbreak/master/VERSION")) == true {
+        let version: String = download_string(String::from("https://raw.githubusercontent.com/L14ms111/assbreak/master/VERSION"));
         #[cfg(target_os = "windows")]
         println!("[!] [WARNING] A new version is available : {}, the software update is available on this link : https://github.com/L14ms111/assbreak/releases", filter(version.clone()).replace(" ", "").to_string());
 
