@@ -8,8 +8,7 @@ use std::time::Duration;
 use selenium_webdriver::*;
 
 // local
-use crate::func::{restart, read_lines, string_to_static_str};
-use colored::Colorize;
+use crate::func::{restart, read_lines, string_to_static_str, color_terminal};
 
 #[allow(dead_code)]
 pub fn brute_website(website: String, username: String, password: String, button: String, user: String, dictionary: String, key: String, show_chrome: bool) {
@@ -44,13 +43,13 @@ pub fn brute_website(website: String, username: String, password: String, button
                             let _ = thread::sleep(Duration::new(2, 0));
                             _link = driver.get_link().unwrap();
                             if website != _link {
-                                println!("[!] [TRIED] => SUCCESS | [PASSWORD] => {}, [USERNAME] => {}, ATTEMPT => {}", String::from(pass), user, attempt);
+                                color_terminal(&*format!("[!] [TRIED] => SUCCESS | [PASSWORD] => {}, [USERNAME] => {}, ATTEMPT => {}", String::from(pass), user, attempt), "green");
                                 let _ = driver.close_browser();
                                 println!("\n");
                                 restart();
                                 break;
                             } else {
-                                println!("[!] [TRIED] => FALSE | [PASSWORD] => {}, [USERNAME] => {}, ATTEMPT => {}", String::from(pass), user, attempt);
+                                color_terminal(&*format!("[!] [TRIED] => FALSE | [PASSWORD] => {}, [USERNAME] => {}, ATTEMPT => {}", String::from(pass), user, attempt), "red");
                                 continue;
                             }
                         }
@@ -58,14 +57,15 @@ pub fn brute_website(website: String, username: String, password: String, button
                 }
             }
         } else {
-            println!("{} ({:?}) {}", "[!] [ERROR] The file".bright_red(), dictionary.bright_red().to_string(), "You put does not exist :/".bright_red());
+            color_terminal(&*format!("[!] [ERROR] The file ({}), You put does not exist :/", dictionary), "red");
             println!("\n");
             restart();
         }
     } else {
-        println!("{}", "[!] [ERROR] Please complete all fields ...".bright_red());
+        color_terminal("[!] [ERROR] Please complete all fields ...", "red");
         println!("\n");
         restart();
     }
     exit(0);
 }
+

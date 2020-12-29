@@ -1,12 +1,11 @@
 //local
-use func::*;
-use view::header;
+use crate::func::*;
+use crate::view::header;
 
 //std
 use std::io;
 use std::io::Write;
 use std::process::exit;
-use colored::Colorize;
 
 // mod
 mod brute_force;
@@ -33,7 +32,7 @@ pub fn main() {
             HEADER = true;
         }
     }
-    print!("{}", "[~] What configuration do you want to use ? : ".green());
+    color_terminal("[~] What configuration do you want to use ? : ", "dark_green");
     let mut commands = String::new();
     let _ = io::stdout().flush();
     // dispatcher
@@ -75,7 +74,7 @@ pub fn main() {
                 }
                 "$help" => {
                     println!("\n");
-                    println!("Brute force of a website from a GET or POST link [SOON]");
+                    println!(" Brute-force an account with linked parameters (GET) [SOON]");
                     println!("---------------------------------------------------------------------------------------------------------");
                     println!(" Brute-force a password from a website form : [EXPERIMENTAL]");
                     println!("    1 - input[type]: text && password && submit        2 - input[type]: email && password && submit");
@@ -88,7 +87,9 @@ pub fn main() {
                     println!("   10 - An Yahoo email address:                       11 - Personnalize (imap address)");
                     println!(" Doesn't work for gmail because OAUTH2 ;)");
                     println!("---------------------------------------------------------------------------------------------------------");
-                    println!("  $quit - Quit assbreak                               $help - To get help");
+                    println!("The available functions : ");
+                    println!("  $query - Show all password dictionary               $help - To get help");
+                    println!("  $quit - Quit assbreak");
                     println!("---------------------------------------------------------------------------------------------------------");
                     println!("Example: you want to brute-force the site and the selectors correspond to one which is proposed (here we are an <input type = 'text'>, <input type = 'password'> and a <button>, I will type 3 in '[~] What configuration do you want to use?:'.");
                     println!("---------------------------------------------------------------------------------------------------------");
@@ -119,11 +120,11 @@ je suis devenu son esclave sexuel, mais j'aime ça. Faudrait que je demande a ma
 ça serait cool, même si ça va être galère de la déterrer.");
                     println!("\n");
                 }
-                _ => {}
+                _ => color_terminal("[!] This command does not exist.", "red"),
             }
         }
         Err(e) => {
-            println!("An error has occurred : {}", e);
+            color_terminal(&*format!("An error has occurred : {}", e), "red");
         }
     }
     restart();

@@ -5,14 +5,14 @@ use std::io::{BufRead, Write};
 use std::path::Path;
 use std::process::exit;
 
+// local
+use crate::main;
 
-
-//extern
+// extern
 #[allow(unused_imports)]
 use ureq::get;
 use discord_rpc_client::Client;
-use crate::main;
-
+use colored::Colorize;
 
 pub fn read_input() -> String {
     loop {
@@ -38,6 +38,8 @@ pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>> 
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
+
+
 
 pub fn string_to_static_str(s: String) -> &'static str {
     Box::leak(s.into_boxed_str())
@@ -132,5 +134,54 @@ pub fn rpc() {
             .large_text("assbreak")
             .small_image("linux")
             .small_text("assbreak for linux"))).unwrap();
+}
+
+#[allow(dead_code)]
+pub fn color_terminal(text: &str, color: &str) {
+    match color {
+        "blue" => {
+            #[cfg(target_os = "linux")]
+            println!("{}", text.bright_blue().to_string());
+            #[cfg(target_os = "macos")]
+            println!("{}", text.bright_blue().to_string());
+            #[cfg(target_os = "windows")]
+            println!("{}", text);
+        }
+        "red" => {
+            #[cfg(target_os = "linux")]
+            println!("{}", text.bright_red().to_string());
+            #[cfg(target_os = "macos")]
+            println!("{}", text.bright_red().to_string());
+            #[cfg(target_os = "windows")]
+            println!("{}", text);
+        }
+        "green" =>  {
+            #[cfg(target_os = "linux")]
+            println!("{}", text.bright_green().to_string());
+            #[cfg(target_os = "macos")]
+            println!("{}", text.bright_green().to_string());
+            #[cfg(target_os = "windows")]
+            println!("{}", text);
+        }
+        "dark_green" =>  {
+            #[cfg(target_os = "linux")]
+            print!("{}", text.green().to_string());
+            #[cfg(target_os = "macos")]
+            print!("{}", text.green().to_string());
+            #[cfg(target_os = "windows")]
+            print!("{}", text);
+        }
+        "yellow" => {
+            #[cfg(target_os = "linux")]
+            println!("{}", text.bright_yellow().to_string());
+            #[cfg(target_os = "macos")]
+            println!("{}", text.bright_yellow().to_string());
+            #[cfg(target_os = "windows")]
+            println!("{}", text);
+        }
+        _ => {
+            println!("{}", text);
+        }
+    }
 }
 

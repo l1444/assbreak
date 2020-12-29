@@ -2,8 +2,10 @@
 use std::path::Path;
 use std::process::exit;
 
+// extern
+
 // local
-use crate::func::{restart, read_lines};
+use crate::func::{restart, read_lines, color_terminal};
 
 // mod
 
@@ -25,11 +27,14 @@ pub fn brute_mail(mail: String, dictionary: String, key: String, imap_address: S
                                 match client.login(mail.clone(), pass.clone()) {
                                     Ok(_) => {
                                         println!("[!] [TRIED] => SUCCESS | [PASSWORD] => {}, [E-MAIL] => {}, ATTEMPT => {}", &pass, mail, attempt);
+                                        color_terminal(&*format!("[!] [TRIED] => SUCCESS | [PASSWORD] => {}, [E-MAIL] => {}, ATTEMPT => {}", &pass, mail, attempt), "green");
+                                        println!("\n");
                                         restart();
                                         break;
                                     }
                                     Err(_) => {
-                                        println!("[!] [TRIED] => FALSE | [PASSWORD] => {}, [E-MAIL] => {}, ATTEMPT => {}", &pass, mail, attempt);
+                                        color_terminal(&*format!("[!] [TRIED] => FALSE | [PASSWORD] => {}, [E-MAIL] => {}, ATTEMPT => {}", &pass, mail, attempt), "red");
+                                        continue;
                                     }
                                 }
                             }
@@ -37,11 +42,13 @@ pub fn brute_mail(mail: String, dictionary: String, key: String, imap_address: S
                     }
                 }
             } else {
-                println!("[!] [ERROR] The file ({:?}) You put does not exist :/", dictionary);
+                color_terminal(&*format!("[!] [ERROR] The file ({}), You put does not exist :/", dictionary), "red");
+                println!("\n");
                 restart();
             }
         } else {
-            println!("[!] [ERROR] Please complete all fields ...");
+            color_terminal("[!] [ERROR] Please complete all fields ...", "red");
+            println!("\n");
             restart();
         }
         exit(0);
